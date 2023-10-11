@@ -1,0 +1,9 @@
+{
+  "verbose": false,
+  "quiet": true,
+  "ignore": ["*.test.js", "**/fixtures/**"],
+  "execMap": {},
+  "events": {
+    "start": "date"
+  }
+}
