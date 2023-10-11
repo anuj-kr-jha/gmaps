@@ -2,7 +2,7 @@
   "type": "module",
   "scripts": {
     "lint": "eslint --ext .ts .",
-    "clean": "rimraf dist",
+    "clean": "rimraf dist && rm ./tsconfig.tsbuildinfo",
     "build": "tsc",
     "start": "npm run build && node dist/index.js",
     "start:watch": "nodemon --ext ts --trace-warnings --exec \"npm start\"",

@@ -1,5 +1,14 @@
 {
   "files.exclude": {
+    "**/.git": false,
+    "**/.svn": false,
+    "**/.hg": false,
+    "**/CVS": false,
+    "**/.DS_Store": false,
+    "**/Thumbs.db": false,
+    "tsconfig.tsbuildinfo": false
+  },
+  "explorerExclude.backup": {
     "**/.git": true,
     "**/.svn": true,
     "**/.hg": true,
@@ -8,6 +17,5 @@
     "**/Thumbs.db": true,
     "tsconfig.tsbuildinfo": true
   },
-  "explorerExclude.backup": {},
   "cSpell.words": ["gmaps", "latlng", "uuidv"]
 }
