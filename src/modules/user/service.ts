@@ -1,4 +1,4 @@
-import { WithId } from 'mongodb';
+import type { UpdateResult, WithId } from 'mongodb';
 import { IUser } from './model.js';
 import db from '../../config/mongo.js';
 import helper from '../../common/utils/helper.js';
@@ -32,7 +32,7 @@ export async function getUser(filter: Partial<Record<keyof IUser, any>>): Promis
   }
 }
 
-export async function updateUser(userId: string, user: Partial<IUser>) {
+export async function updateUser(userId: string, user: Partial<IUser>): Promise<[string | null, UpdateResult<IUser> | null]> {
   try {
     const res = await db.collection<IUser>('users').updateOne({ userId }, { $set: user });
     return [null, res];

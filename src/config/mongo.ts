@@ -6,7 +6,7 @@ const connectToMongoDB = async () => {
   console.log('Connected to MongoDB');
 
   // You can export the client or database for use in other files
-  return client.db('gmaps');
+  return client.db(process.env.DB!);
 };
 
 export default await connectToMongoDB();

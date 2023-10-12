@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-non-null-asserted-optional-chain */
 import type { Socket } from 'socket.io';
-import { getPlaceId, getDirection, getGeoCode } from '../events/getPlaceId.js';
+import { getPlaceId, getDirection, getGeoCode } from '../events/maps.js';
 
 type UserSocket = Socket & { user?: { userId: string; email: string } };
 

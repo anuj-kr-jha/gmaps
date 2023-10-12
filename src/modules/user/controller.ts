@@ -17,10 +17,11 @@ export async function register(req: Request, res: Response) {
 
 export async function login(req: Request, res: Response) {
   const { email, password } = req.body as IUser;
-  const [err, user] = await s.getUser({ email, password });
+  const [err, user] = await s.getUser({ email });
 
   if (err) return res.status(500).json({ message: err || 'Internal Server Error' });
   if (!user) return res.status(404).json({ message: 'user not found' });
+  if (password !== user.password) return res.status(401).json({ message: 'invalid password' });
 
   const token = await helper.encodeToken({ userId: user.userId, email: user.email }, { expiresIn: 24 * 3600 });
   await s.updateUser(user.userId, { token });
